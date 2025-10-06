@@ -7,7 +7,7 @@ import { menuItems } from "../../constants/constants";
 
 
 function SideBar() {
-  const [isDark,setIsDark]=useState(true);
+  // const [isDark,setIsDark]=useState(true);
  
 
   return (
@@ -36,14 +36,14 @@ function SideBar() {
           ))}
 
         </div>
-        <div  className="logout-btn flex justify-center  ">
+        {/* <div  className="logout-btn flex justify-center  "> */}
             {/* <button className="bg-[#1E40AF] w-[150px] h-[40px] text-white rounded-sm m-auto">
                 logout
             </button> */}
-            {isDark?
+            {/* {isDark?
             <MdDarkMode size={30} ></MdDarkMode>
           :<MdOutlineLightMode size={30}></MdOutlineLightMode>}
-          </div>
+          </div> */}
       </div>
     </>
   );

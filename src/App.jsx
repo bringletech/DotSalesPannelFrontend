@@ -24,7 +24,7 @@ function App() {
         <div
           className={`${
             isAuthenticated
-              ? "absolute w-[79%] bg-[#F6F6F6] text-black top-[80px] left-[21%] pr-13 pl-5 pt-5 h-[calc(100vh-80px)] pb-10 overflow-y-auto  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              ? "absolute w-[82%] bg-[#F6F6F6] text-black top-[80px] left-[18%] pr-13 pl-5 pt-5 h-[calc(100vh-80px)] pb-10 overflow-y-auto  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               : ""
           }`}
         >

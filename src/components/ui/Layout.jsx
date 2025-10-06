@@ -12,7 +12,7 @@ function Layout({link,title}) {
   return (
     <>
     <div className="mainContainer w-screen max-h-screen bg-white flex fixed ">
-        <div className="w-[27%] h-full">
+        <div className="w-[22%] h-full">
              <SideBar></SideBar>
         </div>
         <div className="w-full">
