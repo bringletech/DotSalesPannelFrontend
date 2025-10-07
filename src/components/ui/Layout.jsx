@@ -1,27 +1,21 @@
-import React from 'react'
-import SideBar from '../navbars/SideBar'
-import HeaderBar from '../navbars/HeaderBar'
-// import { useLocation } from 'react-router-dom';
-// import CourseHeaderBar from '../courses/CourseHeaderBar';
+import React from "react";
+import SideBar from "../navbars/SideBar";
+import HeaderBar from "../navbars/HeaderBar";
 
-
-function Layout({link,title}) {
-//    var location=useLocation();
-//   console.log("hello:",location.pathname);
-//   var isCreateCourse=location.pathname==='/createcourse'
+function Layout({ link }) {
   return (
-    <>
-    <div className="mainContainer w-screen max-h-screen bg-white flex fixed ">
-        <div className="w-[22%] h-full">
-             <SideBar></SideBar>
-        </div>
-        <div className="w-full">
-             <HeaderBar title={'Dashboard'} link={link?link:null}></HeaderBar>
-        </div>
-      
+    <div className="mainContainer w-screen h-screen bg-white flex fixed ">
+      {/* Sidebar */}
+      <div className="w-[18%] h-full border-r border-gray-200 z-50">
+        <SideBar />
+      </div>
+
+      {/* Main content area */}
+      <div className="flex-1 flex flex-col w-full">
+        <HeaderBar link={link} />
+      </div>
     </div>
-    </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
