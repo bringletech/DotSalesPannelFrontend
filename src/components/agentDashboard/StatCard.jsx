@@ -1,8 +1,11 @@
 import React from "react";
 
-function StatCard({ title, icon: Icon, value }) {
+function StatCard({ title, icon: Icon, value, onClick }) {
   return (
-    <div className="w-[32%] h-[100px] bg-white border border-gray-300 rounded-xl shadow-sm p-4 flex flex-col">
+    <div
+      onClick={onClick} // <-- Added onClick
+      className="w-[32%] h-[100px] bg-white border border-gray-300 rounded-xl shadow-sm p-4 flex flex-col cursor-pointer hover:shadow-lg transition"
+    >
       {/* Title + Icon */}
       <div className="flex items-center gap-2">
         {Icon && <Icon className="text-lg text-gray-700" />}

@@ -28,6 +28,190 @@ export const cardsData = [
   { title: "Outbound Calls", icon: FaPhone, value: 270 },
 ];
 
+export const cardSalesData = [
+  {
+    dotNumber: "DOT001",
+    buyer: "Alice Johnson",
+    course: "React Basics",
+    noOfLicence: 3,
+    discountAmount: 50,
+    amount: 450,
+    dateCreated: "2025-10-01",
+    saleCommission: 45,
+  },
+  {
+    dotNumber: "DOT002",
+    buyer: "Bob Smith",
+    course: "Node.js Advanced",
+    noOfLicence: 2,
+    discountAmount: 0,
+    amount: 400,
+    dateCreated: "2025-10-02",
+    saleCommission: 40,
+  },
+  {
+    dotNumber: "DOT003",
+    buyer: "Charlie Davis",
+    course: "Fullstack MERN",
+    noOfLicence: 5,
+    discountAmount: 100,
+    amount: 900,
+    dateCreated: "2025-10-03",
+    saleCommission: 90,
+  },
+  {
+    dotNumber: "DOT004",
+    buyer: "David Lee",
+    course: "Python Basics",
+    noOfLicence: 1,
+    discountAmount: 20,
+    amount: 180,
+    dateCreated: "2025-10-04",
+    saleCommission: 18,
+  },
+  {
+    dotNumber: "DOT005",
+    buyer: "Emma Wilson",
+    course: "Data Science",
+    noOfLicence: 4,
+    discountAmount: 80,
+    amount: 720,
+    dateCreated: "2025-10-05",
+    saleCommission: 72,
+  },
+];
+
+export const oldDispositionsLeadsCard = [
+  {
+    leadId: "LD001",
+    customer: "Alice Johnson",
+    course: "React Basics",
+    status: "Pending",
+    assignedTo: "John Doe",
+    dateCreated: "2025-09-25",
+  },
+  {
+    leadId: "LD002",
+    customer: "Bob Smith",
+    course: "Node.js Advanced",
+    status: "Follow-up",
+    assignedTo: "Jane Doe",
+    dateCreated: "2025-09-26",
+  },
+  {
+    leadId: "LD003",
+    customer: "Charlie Davis",
+    course: "Fullstack MERN",
+    status: "Pending",
+    assignedTo: "Mark Lee",
+    dateCreated: "2025-09-27",
+  },
+];
+export const newDispositionsLeadsCard = [
+  {
+    leadId: "ND001",
+    customer: "David Lee",
+    course: "Python Basics",
+    status: "New",
+    assignedTo: "John Doe",
+    dateCreated: "2025-10-01",
+  },
+  {
+    leadId: "ND002",
+    customer: "Emma Wilson",
+    course: "Data Science",
+    status: "New",
+    assignedTo: "Jane Doe",
+    dateCreated: "2025-10-02",
+  },
+  {
+    leadId: "ND003",
+    customer: "Frank Harris",
+    course: "React Advanced",
+    status: "New",
+    assignedTo: "Mark Lee",
+    dateCreated: "2025-10-03",
+  },
+];
+export const updatedDispositionsLeadsCard = [
+  {
+    leadId: "UD001",
+    customer: "Alice Johnson",
+    course: "React Basics",
+    status: "Updated",
+    updatedBy: "John Doe",
+    dateUpdated: "2025-10-01",
+  },
+  {
+    leadId: "UD002",
+    customer: "Bob Smith",
+    course: "Node.js Advanced",
+    status: "Updated",
+    updatedBy: "Jane Doe",
+    dateUpdated: "2025-10-02",
+  },
+  {
+    leadId: "UD003",
+    customer: "Charlie Davis",
+    course: "Fullstack MERN",
+    status: "Updated",
+    updatedBy: "Mark Lee",
+    dateUpdated: "2025-10-03",
+  },
+];
+export const inboundCallsCard = [
+  {
+    callId: "IC001",
+    caller: "Alice Johnson",
+    course: "React Basics",
+    duration: "5m 20s",
+    date: "2025-10-01",
+    handledBy: "John Doe",
+  },
+  {
+    callId: "IC002",
+    caller: "Bob Smith",
+    course: "Node.js Advanced",
+    duration: "3m 45s",
+    date: "2025-10-02",
+    handledBy: "Jane Doe",
+  },
+  {
+    callId: "IC003",
+    caller: "Charlie Davis",
+    course: "Fullstack MERN",
+    duration: "4m 10s",
+    date: "2025-10-03",
+    handledBy: "Mark Lee",
+  },
+];
+export const outboundCallsCard = [
+  {
+    callId: "OC001",
+    receiver: "David Lee",
+    course: "Python Basics",
+    duration: "6m 15s",
+    date: "2025-10-01",
+    madeBy: "John Doe",
+  },
+  {
+    callId: "OC002",
+    receiver: "Emma Wilson",
+    course: "Data Science",
+    duration: "4m 50s",
+    date: "2025-10-02",
+    madeBy: "Jane Doe",
+  },
+  {
+    callId: "OC003",
+    receiver: "Frank Harris",
+    course: "React Advanced",
+    duration: "5m 30s",
+    date: "2025-10-03",
+    madeBy: "Mark Lee",
+  },
+];
+
 //dispositions list data
  export const DispositionListData = [
   {
