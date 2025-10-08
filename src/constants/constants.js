@@ -8,7 +8,7 @@ import { FaPhoneAlt, FaClipboardCheck } from "react-icons/fa";
 
  export const menuItems = [
   { icon: AiFillDashboard, label: "Agent Dashboard", link: "/agent-dashboard" },
-  { icon:FaPhoneAlt, label: "Againt Campaign", link: "/againt-campaign" },
+  { icon:FaPhoneAlt, label: "Agent Campaign", link: "/agent-campaign" },
   { icon: FaClipboardCheck, label: "My Disposition", link: "/my-disposition" },
   { icon: Mail, label: "Email Campaign", link: "/emailcampaign" },
   { icon: FaList, label: "Course List", link: "/courselist" },

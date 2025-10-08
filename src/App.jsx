@@ -3,7 +3,7 @@ import Layout from "./components/ui/Layout";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AgentDashboard from "./pages/AgentDashboard";
-import AgaintCampaign from "./pages/AgentCampaign";
+import AgentCampaign from "./pages/AgentCampaign";
 import CouponCode from "./pages/CouponCode";
 import CourseList from "./pages/CourseList";
 import EmailCampaign from "./pages/EmailCampaign";
@@ -32,7 +32,7 @@ function App() {
              <Route path="/" element={<Navigate to="/agent-dashboard" replace />} />
 
             <Route path="/agent-dashboard" element={<AgentDashboard />} />
-            <Route path="/againt-campaign" element={<AgaintCampaign />} />
+            <Route path="/agent-campaign" element={<AgentCampaign />} />
             <Route path="/my-disposition" element={<MyDispositions />} />
             <Route path="/emailcampaign" element={<EmailCampaign />} />
             <Route path="/courselist" element={<CourseList />} />
