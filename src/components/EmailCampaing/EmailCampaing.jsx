@@ -16,7 +16,7 @@ function EmailCampaign() {
   };
 
   const handleFilter = () => {
-    alert("Filter applied!");
+    // alert("Filter applied!");
   };
 
   return (
