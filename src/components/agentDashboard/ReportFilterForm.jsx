@@ -47,11 +47,10 @@ function ReportFilterForm() {
         </select>
 
         <input
-          type="text"
+          type="date"
           name="dateRange"
           value={formData.dateRange}
           onChange={handleChange}
-          placeholder="Select Date Range"
           className="h-8 px-2 border rounded"
         />
 

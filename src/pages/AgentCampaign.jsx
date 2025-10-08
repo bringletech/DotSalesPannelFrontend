@@ -6,7 +6,7 @@ import AgainstCampaign from "../components/agentCampaing/AgaintCompaing";
 function AgentCampaign() {
   return (
     <>
-      <TitleBar title={"Against Campaign"} />
+      <TitleBar title={"Agent Campaign"} />
       <div className="mt-5">
         <FormContainer title={"Search"}>
           <AgainstCampaign />
