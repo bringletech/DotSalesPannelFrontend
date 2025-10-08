@@ -1,14 +1,19 @@
- // side bar data
- import {
-  User,Settings,Mail,Ticket,ShoppingCart,Calendar,
+// side bar data
+import {
+  User,
+  Settings,
+  Mail,
+  Ticket,
+  ShoppingCart,
+  Calendar,
 } from "lucide-react";
-import { AiFillDashboard} from "react-icons/ai";
+import { AiFillDashboard } from "react-icons/ai";
 import { FaList } from "react-icons/fa";
 import { FaPhoneAlt, FaClipboardCheck } from "react-icons/fa";
 
- export const menuItems = [
+export const menuItems = [
   { icon: AiFillDashboard, label: "Agent Dashboard", link: "/agent-dashboard" },
-  { icon:FaPhoneAlt, label: "Againt Campaign", link: "/againt-campaign" },
+  { icon: FaPhoneAlt, label: "Agent Campaign", link: "/againt-campaign" },
   { icon: FaClipboardCheck, label: "My Disposition", link: "/my-disposition" },
   { icon: Mail, label: "Email Campaign", link: "/emailcampaign" },
   { icon: FaList, label: "Course List", link: "/courselist" },
@@ -17,7 +22,13 @@ import { FaPhoneAlt, FaClipboardCheck } from "react-icons/fa";
   { icon: Calendar, label: "My Attendance", link: "/attendance" },
 ];
 
-import { FaShoppingCart, FaArrowCircleLeft, FaArrowCircleRight, FaSyncAlt, FaPhone } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaArrowCircleLeft,
+  FaArrowCircleRight,
+  FaSyncAlt,
+  FaPhone,
+} from "react-icons/fa";
 
 export const cardsData = [
   { title: "Sales", icon: FaShoppingCart, value: 450 },
@@ -213,7 +224,7 @@ export const outboundCallsCard = [
 ];
 
 //dispositions list data
- export const DispositionListData = [
+export const DispositionListData = [
   {
     dot: "12345",
     dispositionStatus: "Interested",
@@ -234,7 +245,7 @@ export const outboundCallsCard = [
   },
 ];
 
- export const agentDashboardList = [
+export const agentDashboardList = [
   {
     agentName: "Tushar Garg",
     teamLeadName: "Munish Kumar",
@@ -384,12 +395,7 @@ export const paymentList = [
   },
 ];
 
-
-
-
-
- 
-// //course data 
+// //course data
 // // dummyCourses.js
 // export const dummyCourses = [
 //   {
@@ -438,22 +444,21 @@ export const paymentList = [
 //   },
 // ];
 
-
 //  // charts data
 //  export const coursesData = [
 //   {
 //     name: "React Fundamental",
-    
+
 //     data: [1200, 1500, 1700, 2000, 1800, 2200, 2500],
 //   },
 //   {
 //     name: "Adv. Java",
-    
+
 //     data: [800, 1200, 1400, 1600, 1800, 2000, 2300],
 //   },
 //   {
 //     name: "UI/UX Design",
-    
+
 //     data: [500, 900, 1300, 1500, 1700, 1900, 2100],
 //   },
 // ];
@@ -461,17 +466,17 @@ export const paymentList = [
 //  export const RevenueData = [
 //   {
 //     name: "Revenue",
-    
+
 //     data: [1200, 1500, 1700, 2000, 1800, 2200, 2500],
 //   },
 //   {
 //     name: "Projected",
-    
+
 //     data: [800, 1200, 1400, 1600, 1800, 2000, 2300],
 //   },
 //   {
 //     name: "Enrollments",
-    
+
 //     data: [500, 900, 1300, 1500, 1700, 1900, 2100],
 //   },
 // ];
@@ -507,13 +512,13 @@ export const paymentList = [
 // };
 // export const options = {
 //     responsive: true,
-//     maintainAspectRatio: false, 
-//     cutout: "70%", 
+//     maintainAspectRatio: false,
+//     cutout: "70%",
 //     layout: {
 //       padding:{
 //         top: 20,    // upar gap
 //         bottom: 10
-//       }             
+//       }
 //     },
 //     plugins: {
 //       legend: {
@@ -521,10 +526,10 @@ export const paymentList = [
 //         labels: {
 //         boxWidth: 12,   // 👈 color box width
 //         boxHeight: 12,  // 👈 color box height
-        
+
 //         padding: 8,     // 👈 text aur box ke beech space
 //         font: {
-//           size: 12,     // 👈 text 
+//           size: 12,     // 👈 text
 //         },
 //       },
 //     }
@@ -542,7 +547,7 @@ export const paymentList = [
 //     y: {
 //       ticks: { font: { size: 14 } ,padding:50}, // course names dikhe y-axis pe
 //       display:false,
-//       offset: true, 
+//       offset: true,
 //     },
 //   },}
 
@@ -555,8 +560,8 @@ export const paymentList = [
 //       },
 //     ],
 //   };
-  
-// export 
+
+// export
 
 //  const lineData = {
 //   labels: ["day 5", "day 10", "day 15", "day 20", "day 25"],
@@ -589,10 +594,10 @@ export const paymentList = [
 //       categoryPercentage:1.4,
 //       barPercentage: 0.8,
 //     }))
-    
+
 //   };
 
-//   //analysis page conversion funnel progress bar data 
+//   //analysis page conversion funnel progress bar data
 //   const convColors = ["#1E40AF", "#30C93B", "#E2C044"];
 // const convAry = ["Leads", "Signup", "Enrollments"];
 // const convValues = [2500, 2000, 1800];
@@ -608,16 +613,15 @@ export const paymentList = [
 //       categoryPercentage:1.4,
 //       barPercentage: 0.8,
 //     }))
-    
-//   };
 
+//   };
 
 //   //dash-card-data
 //   import { FaUser } from "react-icons/fa";
 //   import { VscVmActive } from "react-icons/vsc";
 //   import { GiGraduateCap } from "react-icons/gi";
 //   import { FaUserCircle } from "react-icons/fa";
-  
+
 //      export const cardDetail=[{
 //       // digits:2000,
 //       title:"Total Users",
@@ -633,18 +637,17 @@ export const paymentList = [
 //     {
 //       // digits:2000,
 //       title:"Total Courses",
-//       icon:GiGraduateCap, 
+//       icon:GiGraduateCap,
 //        iconClass:"w-6 h-6 text-blue-500"
-  
+
 //     },
 //     {
 //       // digits:2000,
 //       title:"Revenue",
-//       icon:FaUserCircle, 
+//       icon:FaUserCircle,
 //        iconClass:"w-6 h-6 text-blue-500",
 //     },
 //    ]
-
 
 //    export const AnalyticscardDetail=[{
 //       // digits:2000,
@@ -661,16 +664,14 @@ export const paymentList = [
 //     {
 //       // digits:2000,
 //       title:"Completion Rate",
-//       icon:GiGraduateCap, 
+//       icon:GiGraduateCap,
 //        iconClass:"w-6 h-6 text-blue-500"
-  
+
 //     },
 //     {
 //       // digits:2000,
 //       title:" Avg Revenue User",
-//       icon:FaUserCircle, 
+//       icon:FaUserCircle,
 //        iconClass:"w-6 h-6 text-blue-500",
 //     },
 //    ]
-
-  

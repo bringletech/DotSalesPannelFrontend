@@ -44,7 +44,8 @@ const HeaderBar = ({ sourceId, userName = "Rick Wood" }) => {
       <div className="flex items-center h-[63px]">
         {TIMEZONES.map((tz) => (
           <span key={tz.label}>
-            <span className="font-bold ml-2">{tz.label}:</span> {times[tz.label]}
+            <span className="font-bold ml-4">{tz.label}:</span>{" "}
+            {times[tz.label]}
           </span>
         ))}
         <span className="ml-4">

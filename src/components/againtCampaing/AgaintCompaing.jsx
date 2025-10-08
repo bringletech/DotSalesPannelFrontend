@@ -7,10 +7,17 @@ const AgainstCampaign = () => {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [operatingSince, setOperatingSince] = useState(0);
-  const [powerUnits, setPowerUnits] = useState(0);
-  const [totalDrivers, setTotalDrivers] = useState(0);
-  const [cdlDrivers, setCdlDrivers] = useState(0);
+
+  // Updated state for start and end inputs
+  const [operatingStart, setOperatingStart] = useState("");
+  const [operatingEnd, setOperatingEnd] = useState("");
+  const [powerStart, setPowerStart] = useState("");
+  const [powerEnd, setPowerEnd] = useState("");
+  const [driversStart, setDriversStart] = useState("");
+  const [driversEnd, setDriversEnd] = useState("");
+  const [cdlStart, setCdlStart] = useState("");
+  const [cdlEnd, setCdlEnd] = useState("");
+
   const [operatingStatus, setOperatingStatus] = useState("ACTIVE");
   const [state, setState] = useState("");
   const [timezone, setTimezone] = useState("");
@@ -29,11 +36,11 @@ const AgainstCampaign = () => {
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="bg-white shadow rounded-xl p-6">
         <h2 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
-          Against Campaign Filters
+          Agent Campaign Filters
         </h2>
 
         {/* Basic Info */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+        <div className="flex md:grid-cols-4 gap-4 mb-4">
           <input
             className="border border-gray-300 rounded-lg p-2 focus:ring focus:ring-blue-100 outline-none"
             placeholder="DOT Number"
@@ -76,62 +83,98 @@ const AgainstCampaign = () => {
           />
         </div>
 
-        {/* Range Filters */}
+        {/* Updated Range Filters → Two Inputs Each */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          {/* Operating Since */}
           <div>
             <label className="block text-gray-600 mb-1 text-sm">
-              Operating Since: {operatingSince} years
+              Operating Since
             </label>
-            <input
-              type="range"
-              min={0}
-              max={50}
-              value={operatingSince}
-              onChange={(e) => setOperatingSince(Number(e.target.value))}
-              className="w-full accent-blue-500"
-            />
+            <div className="flex gap-2">
+              <input
+                type="number"
+                placeholder="Start Year"
+                value={operatingStart}
+                onChange={(e) => setOperatingStart(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+              <input
+                type="number"
+                placeholder="End Year"
+                value={operatingEnd}
+                onChange={(e) => setOperatingEnd(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+            </div>
           </div>
 
+          {/* Power Units */}
           <div>
             <label className="block text-gray-600 mb-1 text-sm">
-              Power Units: {powerUnits}
+              Power Units
             </label>
-            <input
-              type="range"
-              min={0}
-              max={50}
-              value={powerUnits}
-              onChange={(e) => setPowerUnits(Number(e.target.value))}
-              className="w-full accent-blue-500"
-            />
+            <div className="flex gap-2">
+              <input
+                type="number"
+                placeholder="Start"
+                value={powerStart}
+                onChange={(e) => setPowerStart(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+              <input
+                type="number"
+                placeholder="End"
+                value={powerEnd}
+                onChange={(e) => setPowerEnd(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+            </div>
           </div>
 
+          {/* Total Drivers */}
           <div>
             <label className="block text-gray-600 mb-1 text-sm">
-              Total Drivers: {totalDrivers}
+              Total Drivers
             </label>
-            <input
-              type="range"
-              min={0}
-              max={50}
-              value={totalDrivers}
-              onChange={(e) => setTotalDrivers(Number(e.target.value))}
-              className="w-full accent-blue-500"
-            />
+            <div className="flex gap-2">
+              <input
+                type="number"
+                placeholder="Start"
+                value={driversStart}
+                onChange={(e) => setDriversStart(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+              <input
+                type="number"
+                placeholder="End"
+                value={driversEnd}
+                onChange={(e) => setDriversEnd(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+            </div>
           </div>
 
+          {/* CDL Drivers */}
           <div>
             <label className="block text-gray-600 mb-1 text-sm">
-              CDL Drivers: {cdlDrivers}
+              CDL Drivers
             </label>
-            <input
-              type="range"
-              min={0}
-              max={50}
-              value={cdlDrivers}
-              onChange={(e) => setCdlDrivers(Number(e.target.value))}
-              className="w-full accent-blue-500"
-            />
+            <div className="flex gap-2">
+              <input
+                type="number"
+                placeholder="Start"
+                value={cdlStart}
+                onChange={(e) => setCdlStart(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+              <input
+                type="number"
+                placeholder="End"
+                value={cdlEnd}
+                onChange={(e) => setCdlEnd(e.target.value)}
+                className="w-1/2 h-8 px-2 border rounded"
+              />
+            </div>
           </div>
         </div>
 
