@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiCalendar } from "react-icons/fi";
 
 function EmailCampaign() {
   const [formData, setFormData] = useState({
@@ -6,6 +7,9 @@ function EmailCampaign() {
     status: "Opened",
     dateRange: "2025-05-19 to 2025-05-20",
   });
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [fromDate, setFromDate] = useState("2025-05-19");
+  const [toDate, setToDate] = useState("2025-05-20");
 
   const handleClear = () => {
     setFormData({
@@ -13,18 +17,27 @@ function EmailCampaign() {
       status: "",
       dateRange: "",
     });
+    setFromDate("");
+    setToDate("");
   };
 
   const handleFilter = () => {
     // alert("Filter applied!");
   };
 
+  const handleDateChange = () => {
+    setFormData({
+      ...formData,
+      dateRange: `${fromDate} to ${toDate}`,
+    });
+    setShowCalendar(false);
+  };
+
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
-      {/* Search Section */}
       <div className="bg-white shadow rounded-lg p-6">
         <h2 className="text-lg font-semibold mb-4 text-gray-700">Search</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center relative">
           {/* Email Service */}
           <select
             value={formData.emailService}
@@ -53,16 +66,49 @@ function EmailCampaign() {
             <option value="Bounced">Bounced</option>
           </select>
 
-          {/* Date Range */}
-          <input
-            type="text"
-            value={formData.dateRange}
-            onChange={(e) =>
-              setFormData({ ...formData, dateRange: e.target.value })
-            }
-            placeholder="dd/mm/yyyy - dd/mm/yyyy"
-            className="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring focus:ring-blue-200"
-          />
+          {/* Date Range with Dropdown Arrow */}
+          <div className="relative w-full">
+            <input
+              type="text"
+              readOnly
+              value={formData.dateRange}
+              onClick={() => setShowCalendar(!showCalendar)}
+              placeholder="dd/mm/yyyy - dd/mm/yyyy"
+              className="border border-gray-300 rounded-lg p-2 w-full pr-10 focus:outline-none focus:ring focus:ring-blue-200 cursor-pointer"
+            />
+            <FiCalendar className="absolute right-3 top-2.5 text-gray-500 pointer-events-none" />
+
+            {showCalendar && (
+              <div className="absolute z-10 bg-white border rounded-md p-4 mt-1 shadow-lg">
+                <div className="flex gap-2">
+                  <div>
+                    <label className="text-sm text-gray-600">From</label>
+                    <input
+                      type="date"
+                      value={fromDate}
+                      onChange={(e) => setFromDate(e.target.value)}
+                      className="border rounded p-1"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm text-gray-600">To</label>
+                    <input
+                      type="date"
+                      value={toDate}
+                      onChange={(e) => setToDate(e.target.value)}
+                      className="border rounded p-1"
+                    />
+                  </div>
+                </div>
+                <button
+                  onClick={handleDateChange}
+                  className="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
+                >
+                  Apply
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* Buttons */}
           <div className="flex space-x-2 justify-end">
@@ -79,43 +125,6 @@ function EmailCampaign() {
               Filter
             </button>
           </div>
-        </div>
-      </div>
-
-      {/* Email Campaign Table */}
-      <div className="bg-white shadow rounded-lg mt-6 p-6">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold text-gray-700">
-            Email Campaign
-          </h2>
-          <span className="text-gray-600 text-sm font-medium">
-            Total Counts: <span className="text-black">0/0</span>
-          </span>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="min-w-full border border-gray-200 text-sm text-left">
-            <thead className="bg-gray-100 text-gray-700">
-              <tr>
-                <th className="py-2 px-4 border-b">Event</th>
-                <th className="py-2 px-4 border-b">Date</th>
-                <th className="py-2 px-4 border-b">Subject</th>
-                <th className="py-2 px-4 border-b">From</th>
-                <th className="py-2 px-4 border-b">To</th>
-                <th className="py-2 px-4 border-b">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td
-                  colSpan="6"
-                  className="text-center py-4 text-gray-500 border-b"
-                >
-                  No Data Found !
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import TitleBar from "../components/ui/TitleBar";
 import FormContainer from "../components/ui/FormContainer";
-import AgainstCampaign from "../components/agentCampaing/AgaintCompaing";
+import AgainstCampaign from "../components/againtCampaing/AgaintCompaing";
 
 function AgentCampaign() {
   return (
