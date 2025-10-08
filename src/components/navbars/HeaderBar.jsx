@@ -84,12 +84,7 @@ const HeaderBar = ({ sourceId, userName = "Rick Wood" }) => {
         </span>
       </div>
       <div className="flex items-center space-x-2">
-        <img
-          src="https://ui-avatars.com/api/?name=Rick+Wood"
-          alt="User"
-          className="h-6 w-6 rounded-full"
-        />
-        <span>{userName}</span>
+        <span className="text-2xl">{userName}</span>
       </div>
     </div>
   );
