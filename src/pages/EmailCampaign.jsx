@@ -6,7 +6,7 @@ function EmailCampaignPage() {
   return (
     <div>
       <TitleBar title={"Email Campaign"} />
-      <FormContainer>
+      <FormContainer title="Search">
         <EmailCampaign />
       </FormContainer>
     </div>

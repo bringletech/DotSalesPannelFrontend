@@ -36,7 +36,7 @@ function EmailCampaign() {
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="bg-white shadow rounded-lg p-6">
-        <h2 className="text-lg font-semibold mb-4 text-gray-700">Search</h2>
+        {/* <h2 className="text-lg font-semibold mb-4 text-gray-700">Search</h2> */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center relative">
           {/* Email Service */}
           <select
