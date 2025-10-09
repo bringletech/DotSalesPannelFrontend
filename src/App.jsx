@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Layout from "./components/ui/Layout";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -6,16 +6,15 @@ import AgentDashboard from "./pages/AgentDashboard";
 import AgaintCampaign from "./pages/AgentCampaign";
 import CouponCode from "./pages/CouponCode";
 import CourseList from "./pages/CourseList";
-import EmailCampaign from "./pages/EmailCampaign";
+// import EmailCampaign from "./pages/EmailCampaign";
 import MyAttendance from "./pages/MyAttendance";
 import MyDispositions from "./pages/MyDispositions";
 import Sales from "./pages/Sales";
 
-
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
-  
-  console.log("isauth?: ",isAuthenticated)
+
+  console.log("isauth?: ", isAuthenticated);
   return (
     <>
       <BrowserRouter>
@@ -29,12 +28,15 @@ function App() {
           }`}
         >
           <Routes>
-             <Route path="/" element={<Navigate to="/agent-dashboard" replace />} />
+            <Route
+              path="/"
+              element={<Navigate to="/agent-dashboard" replace />}
+            />
 
             <Route path="/agent-dashboard" element={<AgentDashboard />} />
             <Route path="/againt-campaign" element={<AgaintCampaign />} />
             <Route path="/my-disposition" element={<MyDispositions />} />
-            <Route path="/emailcampaign" element={<EmailCampaign />} />
+            {/* <Route path="/emailcampaign" element={<EmailCampaign />} /> */}
             <Route path="/courselist" element={<CourseList />} />
             <Route path="/couponcode" element={<CouponCode />} />
             <Route path="/sales" element={<Sales />} />

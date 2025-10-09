@@ -15,7 +15,7 @@ export const menuItems = [
   { icon: AiFillDashboard, label: "Agent Dashboard", link: "/agent-dashboard" },
   { icon: FaPhoneAlt, label: "Agent Campaign", link: "/againt-campaign" },
   { icon: FaClipboardCheck, label: "My Disposition", link: "/my-disposition" },
-  { icon: Mail, label: "Email Campaign", link: "/emailcampaign" },
+  // { icon: Mail, label: "Email Campaign", link: "/emailcampaign" },
   { icon: FaList, label: "Course List", link: "/courselist" },
   { icon: Ticket, label: "Coupon Code", link: "/couponcode" },
   { icon: ShoppingCart, label: "Sales", link: "/sales" },
@@ -292,38 +292,38 @@ export const agentDashboardList = [
     outbound: 50,
   },
 ];
-export const coursesData = [
-  {
-    title: "React for Beginners",
-    price: "$199",
-    agentUid: "AGT001",
-    referenceUrl: "https://example.com/react-for-beginners",
-  },
-  {
-    title: "Advanced Node.js",
-    price: "$249",
-    agentUid: "AGT002",
-    referenceUrl: "https://example.com/advanced-nodejs",
-  },
-  {
-    title: "Fullstack MERN Development",
-    price: "$399",
-    agentUid: "AGT003",
-    referenceUrl: "https://example.com/fullstack-mern",
-  },
-  {
-    title: "JavaScript Mastery",
-    price: "$149",
-    agentUid: "AGT004",
-    referenceUrl: "https://example.com/javascript-mastery",
-  },
-  {
-    title: "UI/UX Design Fundamentals",
-    price: "$179",
-    agentUid: "AGT005",
-    referenceUrl: "https://example.com/ui-ux-fundamentals",
-  },
-];
+// export const coursesData = [
+//   {
+//     title: "React for Beginners",
+//     price: "$199",
+//     agentUid: "AGT001",
+//     referenceUrl: "https://example.com/react-for-beginners",
+//   },
+//   {
+//     title: "Advanced Node.js",
+//     price: "$249",
+//     agentUid: "AGT002",
+//     referenceUrl: "https://example.com/advanced-nodejs",
+//   },
+//   {
+//     title: "Fullstack MERN Development",
+//     price: "$399",
+//     agentUid: "AGT003",
+//     referenceUrl: "https://example.com/fullstack-mern",
+//   },
+//   {
+//     title: "JavaScript Mastery",
+//     price: "$149",
+//     agentUid: "AGT004",
+//     referenceUrl: "https://example.com/javascript-mastery",
+//   },
+//   {
+//     title: "UI/UX Design Fundamentals",
+//     price: "$179",
+//     agentUid: "AGT005",
+//     referenceUrl: "https://example.com/ui-ux-fundamentals",
+//   },
+// ];
 
 export const couponCodeList = [
   {
