@@ -1,26 +1,29 @@
 import React, { useState } from "react";
-import { FiShoppingCart } from "react-icons/fi"; // sales icon
+import { FiShoppingCart } from "react-icons/fi";
+import useGetCourses from "../../api/useGetCourses";
 
-const SalesContainer = ({ children }) => {
+const SalesContainer = ({ children, onFilter }) => {
   const [filters, setFilters] = useState({
     search: "",
     course: "",
-    dateRange: "",
+    startDate: "",
+    endDate: "",
   });
+
+  const { courses } = useGetCourses();
 
   const handleClear = () => {
     setFilters({
       search: "",
       course: "",
-      dateRange: "",
+      startDate: "",
+      endDate: "",
     });
+    if (onFilter) onFilter(null); // reset filters in parent
   };
 
   const handleFilter = () => {
-    alert(`Filter applied:
-      Search: ${filters.search}
-      Course: ${filters.course}
-      Date Range: ${filters.dateRange}`);
+    if (onFilter) onFilter(filters); // send filters to parent
   };
 
   return (
@@ -34,7 +37,6 @@ const SalesContainer = ({ children }) => {
 
         {/* Filters */}
         <div className="flex gap-3">
-          {/* Search */}
           <input
             type="text"
             placeholder="Search by dot/company name"
@@ -43,46 +45,50 @@ const SalesContainer = ({ children }) => {
             className="border px-3 py-1 rounded-md text-sm"
           />
 
-          {/* Course */}
           <select
             value={filters.course}
             onChange={(e) => setFilters({ ...filters, course: e.target.value })}
             className="border px-3 py-1 rounded-md text-sm"
           >
             <option value="">Select course</option>
-            <option value="React">React</option>
-            <option value="Node">Node.js</option>
-            <option value="MERN">MERN</option>
+            {courses.map((course) => (
+              <option key={course.id} value={course.id}>
+                {course.title}
+              </option>
+            ))}
           </select>
 
-          {/* Date Range */}
           <input
             type="date"
-            value={filters.dateRange}
-            onChange={(e) =>
-              setFilters({ ...filters, dateRange: e.target.value })
-            }
+            value={filters.startDate}
+            onChange={(e) => setFilters({ ...filters, startDate: e.target.value })}
+            className="border px-3 py-1 rounded-md text-sm"
+          />
+
+          <input
+            type="date"
+            value={filters.endDate}
+            onChange={(e) => setFilters({ ...filters, endDate: e.target.value })}
             className="border px-3 py-1 rounded-md text-sm"
           />
         </div>
-        {/* Buttons */}
-      <div className="flex justify-end gap-2 mb-4">
-        <button
-          onClick={handleClear}
-          className="px-4 py-1 border rounded-md bg-white text-black text-sm"
-        >
-          Clear
-        </button>
-        <button
-          onClick={handleFilter}
-          className="px-4 py-1 border rounded-md bg-red-600 text-white text-sm"
-        >
-          Filter
-        </button>
-      </div>
-      </div>
 
-      
+        {/* Buttons */}
+        <div className="flex justify-end gap-2 mb-4">
+          <button
+            onClick={handleClear}
+            className="px-4 py-1 border rounded-md bg-white text-black text-sm"
+          >
+            Clear
+          </button>
+          <button
+            onClick={handleFilter}
+            className="px-4 py-1 border rounded-md bg-red-600 text-white text-sm"
+          >
+            Filter
+          </button>
+        </div>
+      </div>
 
       {/* Sales Info */}
       <div className="flex items-center gap-2 mb-4 text-gray-700">
@@ -90,7 +96,7 @@ const SalesContainer = ({ children }) => {
         <span className="font-semibold">Total Sales: 4</span>
       </div>
 
-      {/* Children (List Component) */}
+      {/* Children remain untouched */}
       <div>{children}</div>
     </div>
   );

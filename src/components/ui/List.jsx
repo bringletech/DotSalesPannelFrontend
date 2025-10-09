@@ -1,19 +1,12 @@
 import React from "react";
 
-function List({ Data }) {
-  if (!Data || Data.length === 0) {
-    return <p className="text-gray-500">No data found.</p>;
-  }
-
-  const titles = Object.keys(Data[0]);
-
-  const copyUrl = (url) => {
-    navigator.clipboard
-      .writeText(url)
-      .then(() => alert("Copied!"))
-      .catch(() => alert("Failed to copy"));
-  };
-
+function List({Data}) {
+    const titles = Object.keys(Data[0]);
+    const copyUrl=(url)=>{
+         navigator.clipboard.writeText(url)
+      .then(() => alert("copied!"))
+      .catch((err) => alert("Failed to copy"));
+    }
   return (
     <div className="w-full overflow-x-auto bg-white rounded-xl">
       <table className="w-full border border-gray-300 rounded-lg">

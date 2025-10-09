@@ -1,16 +1,36 @@
-import React from 'react'
-import SalesContainer from '../components/sales/SalesContainer'
-import List from '../components/ui/List'
-import { paymentList } from '../constants/constants'
+import React, { useState, useEffect } from "react";
+import List from "../components/ui/List";
+import useGetSales from "../api/useGetSales";
+import useSendSalesFilter from "../api/useSendSalesFilter";
+import SalesContainer from "../components/sales/SalesContainer";
 
 function Sales() {
+  const { data: allSales, loading, error } = useGetSales(); // initial data
+  const [activeFilters, setActiveFilters] = useState(null); // filters from container
+  const { data: filteredData } = useSendSalesFilter(activeFilters); // filtered data
+
+  const [displayData, setDisplayData] = useState([]);
+
+  // Initially show all sales
+  useEffect(() => {
+    if (!activeFilters) setDisplayData(allSales || []);
+  }, [allSales, activeFilters]);
+
+  // Update displayData when filteredData changes
+  useEffect(() => {
+    if (filteredData) setDisplayData(filteredData);
+  }, [filteredData]);
+
+  if (loading) return <p className="p-4">Loading sales data...</p>;
+  if (error) return <p className="p-4 text-red-500">Error: {error.message}</p>;
+
   return (
-    <>
-    <SalesContainer>
-        <List Data={paymentList}></List>
+    <SalesContainer
+      onFilter={(filters) => setActiveFilters(filters)} // callback for filter
+    >
+      <List Data={displayData || []} />
     </SalesContainer>
-    </>
-  )
+  );
 }
 
-export default Sales
+export default Sales;
