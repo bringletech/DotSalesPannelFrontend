@@ -1,7 +1,10 @@
 import React from "react";
 // import { DispositionListData } from "../../constants/constants";
 
-function List({Data}) {
+function List({Data=[]}) {
+    if (!Data || Data.length === 0) {
+    return <p className="p-4 text-gray-500">No data found.</p>;
+  }
     const titles = Object.keys(Data[0]);
     const copyUrl=(url)=>{
          navigator.clipboard.writeText(url)
