@@ -44,14 +44,14 @@ function SearchDispositionForm() {
   return (
     <form className="w-full p-4" onSubmit={handleSubmit}>
       {/* First row of 4 fields */}
-      <div className="flex justify-start gap-10 mb-4">
+      <div className="grid grid-cols-4 gap-4 mb-4">
         <input
           type="text"
           name="dotNumber"
           value={formData.dotNumber}
           onChange={handleChange}
           placeholder="Dot number"
-          className="border px-3 py-2 rounded-md w-[250px]"
+          className="border px-3 py-2 rounded-md w-[200px]"
         />
         <input
           type="text"
@@ -59,7 +59,7 @@ function SearchDispositionForm() {
           value={formData.mcMxFfNumber}
           onChange={handleChange}
           placeholder="MC/MX/FF number"
-          className="border px-3 py-2 rounded-md w-[250px]"
+          className="border px-3 py-2 rounded-md w-[200px]"
         />
         <input
           type="text"
@@ -67,7 +67,7 @@ function SearchDispositionForm() {
           value={formData.ownerName}
           onChange={handleChange}
           placeholder="Owner name"
-          className="border px-3 py-2 rounded-md w-[250px]"
+          className="border px-3 py-2 rounded-md w-[200px]"
         />
         <input
           type="text"
@@ -75,7 +75,7 @@ function SearchDispositionForm() {
           value={formData.companyName}
           onChange={handleChange}
           placeholder="Company name"
-          className="border px-3 py-2 rounded-md w-[250px]"
+          className="border px-3 py-2 rounded-md w-[200px]"
         />
       </div>
 
@@ -87,7 +87,7 @@ function SearchDispositionForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder="Email"
-          className="border px-3 py-2 rounded-md w-[250px]"
+          className="border px-3 py-2 rounded-md w-[200px]"
         />
         <input
           type="text"
@@ -95,7 +95,7 @@ function SearchDispositionForm() {
           value={formData.phone1}
           onChange={handleChange}
           placeholder="Phone number"
-          className="border px-3 py-2 rounded-md w-[250px]"
+          className="border px-3 py-2 rounded-md w-[200px]"
         />
         <input
           type="text"
@@ -103,21 +103,21 @@ function SearchDispositionForm() {
           value={formData.phone2}
           onChange={handleChange}
           placeholder="Phone number"
-          className="border px-3 py-2 rounded-md col-span-2  w-[250px]"
+          className="border px-3 py-2 rounded-md col-span-2 w-full"
         />
       </div>
 
       {/* Advance filter section */}
       <div className="mb-4">
         <h3 className="font-bold mb-2">Advance Filter</h3>
-        <div className="flex justify-start gap-4 w-1/2">
+        <div className="grid grid-cols-2 gap-4 w-1/2">
           <div>
             <label className="block text-sm mb-1">Call Direction</label>
             <select
               name="callDirection"
               value={formData.callDirection}
               onChange={handleChange}
-              className="border px-3 py-2 rounded-md w-[250px]"
+              className="border px-3 py-2 rounded-md w-full"
             >
               <option value="">Select call type</option>
               <option value="Inbound">Inbound</option>
@@ -130,7 +130,7 @@ function SearchDispositionForm() {
               name="dispositionStatus"
               value={formData.dispositionStatus}
               onChange={handleChange}
-              className="border px-3 py-2 rounded-md w-[250px]  "
+              className="border px-3 py-2 rounded-md w-full"
             >
               <option value="">Select state</option>
               <option value="Old">Old</option>

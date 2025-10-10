@@ -1,12 +1,21 @@
 import React from "react";
 
-function List({Data}) {
-    const titles = Object.keys(Data[0]);
-    const copyUrl=(url)=>{
-         navigator.clipboard.writeText(url)
-      .then(() => alert("copied!"))
-      .catch((err) => alert("Failed to copy"));
-    }
+function List({ Data }) {
+  // Check if Data exists and has at least one item
+  const titles = Data && Data.length > 0 ? Object.keys(Data[0]) : [];
+
+  // Handle case when there is no data
+  if (!titles.length) {
+    return <p className="text-gray-500">No data found.</p>;
+  }
+
+  const copyUrl = (url) => {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => alert("Copied!"))
+      .catch(() => alert("Failed to copy"));
+  };
+
   return (
     <div className="w-full overflow-x-auto bg-white rounded-xl">
       <table className="w-full border border-gray-300 rounded-lg">
@@ -24,8 +33,8 @@ function List({Data}) {
         </thead>
 
         <tbody>
-          {Data.map((row, rowIndex) => (
-            <tr key={row.id || rowIndex} className="hover:bg-gray-50">
+          {Data.map((row) => (
+            <tr key={row.id || Math.random()} className="hover:bg-gray-50">
               {titles.map((col, colIndex) => (
                 <td key={colIndex} className="px-4 py-2 border-b">
                   {col === "notes" ? (
@@ -60,11 +69,7 @@ function List({Data}) {
                       {row[col]}
                     </p>
                   ) : typeof row[col] === "boolean" ? (
-                    row[col] ? (
-                      "True"
-                    ) : (
-                      "False"
-                    )
+                    row[col].toString()
                   ) : typeof row[col] === "object" ? (
                     JSON.stringify(row[col])
                   ) : (

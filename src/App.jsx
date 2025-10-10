@@ -10,6 +10,8 @@ import CourseList from "./pages/CourseList";
 import MyAttendance from "./pages/MyAttendance";
 import MyDispositions from "./pages/MyDispositions";
 import Sales from "./pages/Sales";
+import LeadDispositionCard from "./components/leaddisposition/LeadDispositionCard";
+import AddDispositionForm from "./components/addPosition/AddDispositionForm";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -23,7 +25,7 @@ function App() {
         <div
           className={`${
             isAuthenticated
-              ? "absolute w-[82%] bg-[#F6F6F6] text-black top-[80px] left-[18%] pr-13 pl-5 pt-5 h-[calc(100vh-80px)] pb-10 overflow-y-auto  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              ? "absolute w-[82%] bg-white text-black top-[80px] left-[18%] pr-13 pl-5 pt-5 h-[calc(100vh-80px)] pb-10 overflow-y-auto  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               : ""
           }`}
         >
@@ -40,7 +42,13 @@ function App() {
             <Route path="/courselist" element={<CourseList />} />
             <Route path="/couponcode" element={<CouponCode />} />
             <Route path="/sales" element={<Sales />} />
-            <Route path="/attendance" element={<MyAttendance />} />
+            <Route path="/leaddisposition" element={<LeadDispositionCard />} />
+            <Route
+              path="/adddispositionform"
+              element={<AddDispositionForm />}
+            />
+            {/* <Route path="/attendance" element={<MyAttendance />} />
+            <Route path="/lead-details" element={<LeadDetails />} /> */}
           </Routes>
         </div>
       </BrowserRouter>
